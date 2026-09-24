@@ -63,24 +63,32 @@
             color: rgba(255, 255, 255, 0.75);
             transition: color 0.3s;
         }
-        .nav-menu a:hover {
+        .nav-menu li:hover a,
+        .nav-menu li:focus-within a {
             color: #ffffff;
         }
         .nav-menu li.active a {
             color: #ffffff;
             font-weight: 600;
         }
-        .nav-menu li.active::before {
+        .nav-menu li::before {
             content: "•";
             color: #ffffff;
             position: absolute;
             left: -18px;
-            
-            top: 50%; 
-            transform: translateY(-50%); 
+            top: 50%;
+            transform: translateY(-50%);
             line-height: 1;
-
             font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .nav-menu li:hover::before,
+        .nav-menu li:focus-within::before,
+        .nav-menu li.active::before {
+            opacity: 1;
         }
         .footer {
             font-size: 12px;
@@ -133,7 +141,7 @@
         .content-block p {
             margin-bottom: 24px;
             font-size: 18px;
-            text-align: justify;
+            text-align: left;
         }
         .btn-cv {
             display: inline-flex;
@@ -188,8 +196,8 @@
             .nav-menu li {
                 margin-bottom: 0;
             }
-            .nav-menu li.active::before {
-                display: none; 
+            .nav-menu li::before {
+                display: none;
             }
             .footer {
                 display: none;
@@ -219,6 +227,7 @@
         <ul class="nav-menu">
             <li class="active"><a href="index.html">About</a></li>
             <li><a href="notes.html">Notes</a></li>
+            <li><a href="personal.html">Personal</a></li>
             <li><a href="cv.html">Curriculum Vitae</a></li>
         </ul>
 
@@ -243,7 +252,7 @@
             <div class="content-block">
                 <p>Hi! I'm Runfa Hu (胡润发), an undergraduate student at <a href="https://www.acem.sjtu.edu.cn/en" target="_blank" class="my-link">ACEM</a>, 
                     <a href="https://en.sjtu.edu.cn/" target="_blank" class="my-link">Shanghai Jiao Tong University</a>, majoring in Economics and Mathematics. 
-                    I'm interested in Non-convex Optimization (Integer Programming and Combinatorial Optimization), Computational Economics, and Revealed Preference Theory.  
+                    I'm interested in Non-convex Optimization (Integer Programming and Combinatorial Optimization), Computational Economics, Computational Complexity, and Revealed Preference Theory.  
                 </p>         
             </div>    
         </section>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Runfa Hu - Curriculum Vitae</title>
+    <title>Runfa Hu - Personal</title>
     <link rel="icon" href="apple.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,43 +100,30 @@
             padding-bottom: 15px;
             border-bottom: 1px solid #eaeaea;
         }
-        .cv-actions {
-            margin-bottom: 24px;
-        }
-        .btn-pdf {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 18px;
-            border: 1px solid #003472;
-            border-radius: 4px;
-            font-size: 15px;
-            color: #003472;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        .btn-pdf:hover {
-            background-color: #003472;
-            color: #ffffff;
-        }
-        .btn-pdf svg {
-            margin-right: 8px;
-            width: 18px;
-            height: 18px;
-        }
-        .pdf-preview {
-            width: 100%;
-            height: 900px;
-            border: 1px solid #e0e0e0;
-            background-color: #f8f9fa;
-        }
-        .pdf-fallback {
-            padding: 30px;
-            font-size: 16px;
+        .personal-content {
+            font-size: 18px;
             color: #555;
+            text-align: left;
+            overflow-wrap: break-word;
         }
-        .pdf-fallback a {
-            color: #003472;
+        .personal-content p {
+            margin-bottom: 28px;
+        }
+        .personal-content p:last-child {
+            margin-bottom: 0;
+        }
+        .my-link {
+            color: #2E4E7E;
             text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+        }
+        .my-link:hover {
+            color: #003472;
+        }
+        a:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 4px;
         }
         @media (max-width: 850px) {
             .container {
@@ -170,10 +157,6 @@
                 margin-left: 0;
                 padding: 40px 6%;
             }
-            .pdf-preview {
-                height: 70vh;
-                min-height: 520px;
-            }
         }
     </style>
 </head>
@@ -185,8 +168,8 @@
         <ul class="nav-menu">
             <li><a href="index.html">About</a></li>
             <li><a href="notes.html">Notes</a></li>
-            <li><a href="personal.html">Personal</a></li>
-            <li class="active"><a href="cv.html">Curriculum Vitae</a></li>
+            <li class="active"><a href="personal.html" aria-current="page">Personal</a></li>
+            <li><a href="cv.html">Curriculum Vitae</a></li>
         </ul>
 
         <div class="footer">
@@ -196,24 +179,14 @@
     </aside>
 
     <main class="main-content">
-        <section id="cv">
-            <h2 class="section-title">Curriculum Vitae</h2>
-
-            <div class="cv-actions">
-                <a href="cv.pdf" download class="btn-pdf">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                    Download PDF
-                </a>
+        <section id="personal" aria-labelledby="personal-title">
+            <h1 class="section-title" id="personal-title">Personal</h1>
+            <div class="personal-content">
+                <p>I love modern art, table tennis, tennis, cycling, and hip-hop music.</p>
+                <p>My favorite artists: <a href="https://en.wikipedia.org/wiki/Vincent_van_Gogh" target="_blank" rel="noopener noreferrer" class="my-link">Vincent van Gogh</a>, <a href="https://en.wikipedia.org/wiki/Chen_Danqing" target="_blank" rel="noopener noreferrer" class="my-link">陈丹青</a>, <a href="https://en.wikipedia.org/wiki/Kanye_West" target="_blank" rel="noopener noreferrer" class="my-link">Kanye West</a>, <a href="https://en.wikipedia.org/wiki/Christopher_Nolan" target="_blank" rel="noopener noreferrer" class="my-link">Christopher Nolan</a>, <a href="https://zh.wikipedia.org/wiki/单依纯" target="_blank" rel="noopener noreferrer" class="my-link">单依纯</a>.</p>
+                <p>My favorite albums: <a href="https://en.wikipedia.org/wiki/The_College_Dropout" target="_blank" rel="noopener noreferrer" class="my-link">The College Dropout</a>, <a href="https://en.wikipedia.org/wiki/My_Beautiful_Dark_Twisted_Fantasy" target="_blank" rel="noopener noreferrer" class="my-link">My Beautiful Dark Twisted Fantasy</a>, <a href="https://open.spotify.com/album/2YS8Z0Vc7FTOYBLgUoN2Lo" target="_blank" rel="noopener noreferrer" class="my-link">choke enough</a>, <a href="https://mariboustate.lnk.to/hallucinating" target="_blank" rel="noopener noreferrer" class="my-link">Hallucinating Love</a>, <a href="https://music.douban.com/subject/38177441/" target="_blank" rel="noopener noreferrer" class="my-link">纯妹妹</a>.</p>
+                <p>My favorite movies and TV shows: <a href="https://en.wikipedia.org/wiki/Interstellar_(film)" target="_blank" rel="noopener noreferrer" class="my-link">Interstellar</a>, <a href="https://en.wikipedia.org/wiki/Inception" target="_blank" rel="noopener noreferrer" class="my-link">Inception</a>, <a href="https://en.wikipedia.org/wiki/Chernobyl_(miniseries)" target="_blank" rel="noopener noreferrer" class="my-link">Chernobyl</a>, <a href="https://en.wikipedia.org/wiki/Weathering_with_You" target="_blank" rel="noopener noreferrer" class="my-link">天気の子</a>, <a href="https://www.odysseymovie.ca/synopsis/" target="_blank" rel="noopener noreferrer" class="my-link">The Odyssey</a>.</p>
             </div>
-
-            <object class="pdf-preview" data="cv.pdf#view=FitH" type="application/pdf">
-                <div class="pdf-fallback">
-                    <p>Your browser cannot display the PDF preview.</p>
-                    <p><a href="cv.pdf" target="_blank" rel="noopener noreferrer">Open the curriculum vitae in a new tab</a>.</p>
-                </div>
-            </object>
         </section>
     </main>
 </div>
