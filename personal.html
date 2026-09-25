@@ -158,6 +158,40 @@
                 padding: 40px 6%;
             }
         }
+        .art-gallery {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .art-gallery h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 28px;
+        }
+
+        .artwork {
+            margin: 0 0 36px;
+        }
+
+        .artwork:last-child {
+            margin-bottom: 0;
+        }
+
+        .artwork img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .artwork figcaption {
+            margin-top: 12px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -186,7 +220,27 @@
                 <p>My favorite artists: <a href="https://en.wikipedia.org/wiki/Vincent_van_Gogh" target="_blank" rel="noopener noreferrer" class="my-link">Vincent van Gogh</a>, <a href="https://en.wikipedia.org/wiki/Chen_Danqing" target="_blank" rel="noopener noreferrer" class="my-link">陈丹青</a>, <a href="https://en.wikipedia.org/wiki/Kanye_West" target="_blank" rel="noopener noreferrer" class="my-link">Kanye West</a>, <a href="https://en.wikipedia.org/wiki/Christopher_Nolan" target="_blank" rel="noopener noreferrer" class="my-link">Christopher Nolan</a>, <a href="https://zh.wikipedia.org/wiki/单依纯" target="_blank" rel="noopener noreferrer" class="my-link">单依纯</a>.</p>
                 <p>My favorite albums: <a href="https://en.wikipedia.org/wiki/The_College_Dropout" target="_blank" rel="noopener noreferrer" class="my-link">The College Dropout</a>, <a href="https://en.wikipedia.org/wiki/My_Beautiful_Dark_Twisted_Fantasy" target="_blank" rel="noopener noreferrer" class="my-link">My Beautiful Dark Twisted Fantasy</a>, <a href="https://open.spotify.com/album/2YS8Z0Vc7FTOYBLgUoN2Lo" target="_blank" rel="noopener noreferrer" class="my-link">choke enough</a>, <a href="https://mariboustate.lnk.to/hallucinating" target="_blank" rel="noopener noreferrer" class="my-link">Hallucinating Love</a>, <a href="https://music.douban.com/subject/38177441/" target="_blank" rel="noopener noreferrer" class="my-link">纯妹妹</a>.</p>
                 <p>My favorite movies and TV shows: <a href="https://en.wikipedia.org/wiki/Interstellar_(film)" target="_blank" rel="noopener noreferrer" class="my-link">Interstellar</a>, <a href="https://en.wikipedia.org/wiki/Inception" target="_blank" rel="noopener noreferrer" class="my-link">Inception</a>, <a href="https://en.wikipedia.org/wiki/Chernobyl_(miniseries)" target="_blank" rel="noopener noreferrer" class="my-link">Chernobyl</a>, <a href="https://en.wikipedia.org/wiki/Weathering_with_You" target="_blank" rel="noopener noreferrer" class="my-link">天気の子</a>, <a href="https://www.odysseymovie.ca/synopsis/" target="_blank" rel="noopener noreferrer" class="my-link">The Odyssey</a>.</p>
-            </div>
+                        </div>
+
+            <section class="art-gallery" aria-labelledby="art-gallery-title">
+                <h2 id="art-gallery-title">Favorite Artworks</h2>
+
+                <figure class="artwork">
+                    <img src="Women%20Picking%20Olives.jpg" alt="Women Picking Olives by Vincent van Gogh, 1889" loading="lazy">
+                    <figcaption>
+                        Vincent van Gogh, <a href="https://www.metmuseum.org/art/collection/search/436536" target="_blank" rel="noopener noreferrer" class="my-link"><em>Women Picking Olives</em></a>, 1889.<br>
+                        The Metropolitan Museum of Art, New York. Public domain (CC0).
+                    </figcaption>
+                </figure>
+
+                <figure class="artwork">
+                    <img src="Oleanders.jpg" alt="Oleanders by Vincent van Gogh, 1888" loading="lazy">
+                    <figcaption>
+                        Vincent van Gogh, <a href="https://www.metmuseum.org/art/collection/search/436530" target="_blank" rel="noopener noreferrer" class="my-link"><em>Oleanders</em></a>, 1888.<br>
+                        The Metropolitan Museum of Art, New York. Public domain (CC0).
+                    </figcaption>
+                </figure>
+            </section>
         </section>
     </main>
 </div>
