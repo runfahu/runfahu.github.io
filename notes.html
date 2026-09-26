@@ -156,18 +156,27 @@
         .btn-pdf {
             display: inline-flex;
             align-items: center;
-            font-size: 15px;
-            color: #003472;
+            padding: 3px 10px;
+            border: 1px solid #003472;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.4;
             font-weight: 500;
-            transition: opacity 0.3s;
+            color: #003472;
+            background-color: transparent;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .btn-pdf:hover {
-            opacity: 0.7;
+        .btn-pdf:hover,
+        .btn-pdf:focus-visible {
+            background-color: #003472;
+            color: #ffffff;
         }
         .btn-pdf svg {
             margin-right: 6px;
             width: 18px;
             height: 18px;
+            flex-shrink: 0;
         }
         .note-bullets {
             font-size: 18px;
@@ -417,10 +426,7 @@
                     </ul>
                     <p class="note-desc">I reorganized my handwritten notes into this document by ChatGPT.</p>
 
-                    <a href="cyclic_monotonicity.pdf" download class="btn-pdf">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        [pdf]
-                    </a>
+                    <a href="cyclic_monotonicity.pdf" download class="btn-pdf"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>pdf</a>
                 </div>
 
 
@@ -434,10 +440,7 @@
                     </ul>
                     <p class="note-desc">I presented this topic at MATH3402: Representation Theory of Groups and Algebras.</p>
 
-                    <a href="SDP.pdf" download class="btn-pdf">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        [pdf]
-                    </a>
+                    <a href="SDP.pdf" download class="btn-pdf"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>pdf</a>
                 </div>
 
                 <div class="note-item">
@@ -450,10 +453,7 @@
                     </ul>
                     <p class="note-desc">I presented this topic at MATH6104: Algebraic Combinatorics.</p>
 
-                    <a href="HMI.pdf" download class="btn-pdf">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        [pdf]
-                    </a>
+                    <a href="HMI.pdf" download class="btn-pdf"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>pdf</a>
                 </div>
 
                 <div class="note-item">
@@ -465,10 +465,7 @@
                     </ul>
                     <p class="note-desc">I presented this topic at MATH6104: Algebraic Combinatorics.</p>
 
-                    <a href="shapley_folkman.pdf" download class="btn-pdf">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        [pdf]
-                    </a>
+                    <a href="shapley_folkman.pdf" download class="btn-pdf"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>pdf</a>
                 </div>
                 
                 <div class="note-item">
@@ -481,28 +478,19 @@
                         <li>simple upper and lower bounds for the problem of covering choice data with the minimum number of preferences.</li>
                     </ul>
 
-                    <a href="Afriat_s_Theorem_and_Graph.pdf" download class="btn-pdf">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        [pdf]
-                    </a>
+                    <a href="Afriat_s_Theorem_and_Graph.pdf" download class="btn-pdf"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>pdf</a>
                 </div>
 
                 <div class="note-item">
                     <h3 class="note-title">Talk at Micro Theory Reading Group (MTRG)</h3>
                     <p class="note-desc">These are slides from my presentation at MTRG about "Preference for Flexibility and Randomization under Uncertainty" by Kota Saito.</p>
-                    <a href="MTRG.pdf" download class="btn-pdf">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        [pdf]
-                    </a>
+                    <a href="MTRG.pdf" download class="btn-pdf"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>pdf</a>
                 </div>
 
                 <div class="note-item">
                     <h3 class="note-title">Continuous Ramsey Model under Population Decline</h3>
                     <p class="note-desc">Far from rigorous and probably containing a few mistakes, this ODE course project was my first attempt to independently explore a concrete problem in computational economics.</p>
-                    <a href="ODE.pdf" download class="btn-pdf">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        [pdf]
-                    </a>
+                    <a href="ODE.pdf" download class="btn-pdf"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>pdf</a>
                 </div>
 
             </div>
