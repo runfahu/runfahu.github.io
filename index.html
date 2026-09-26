@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#003472" media="(max-width: 850px)">
     <title>Runfa Hu - About</title>
     <link rel="icon" href="apple.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -344,6 +345,13 @@
             animation: content-leave 130ms cubic-bezier(.4, 0, 1, 1) both;
         }
         html.page-restored .main-content { animation: none; }
+
+        /* Safari may sample the page canvas while the transition overlay is
+           active. Keep that canvas blue; the reading surface stays white. */
+        @media (max-width: 850px) {
+            html, body { background-color: #003472; }
+            .container { background-color: #fff; }
+        }
 
         @media (prefers-reduced-motion: reduce) {
             @view-transition { navigation: none; }
