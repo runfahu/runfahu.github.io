@@ -177,46 +177,144 @@
             outline: 2px solid currentColor;
             outline-offset: 4px;
         }
+
+
+        /* Shared desktop identity and mobile navigation. */
+        .sidebar {
+            overflow-y: auto;
+            height: 100vh;
+            height: 100dvh;
+        }
+        .sidebar-brand {
+            flex-shrink: 0;
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #fff;
+            white-space: nowrap;
+        }
+        .site-navigation { flex: 1 0 auto; }
+        .mobile-header, .menu-toggle, .menu-close, .menu-backdrop { display: none; }
+        .menu-toggle, .menu-close {
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            border: 0;
+            border-radius: 4px;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-toggle svg, .menu-close svg { width: 24px; height: 24px; }
+        .menu-toggle:hover, .menu-close:hover { background: rgba(255, 255, 255, 0.1); }
+        .sidebar a:focus-visible, .mobile-header a:focus-visible,
+        .menu-toggle:focus-visible, .menu-close:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+        .main-content { min-width: 0; }
         @media (max-width: 850px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                position: relative;
-                height: auto;
-                padding: 20px 30px;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .nav-menu {
+            .container { flex-direction: column; }
+            .mobile-header {
                 display: flex;
-                flex-wrap: wrap;
-                margin-top: 0;
-                gap: 20px;
+                align-items: center;
+                gap: 10px;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                min-height: 64px;
+                padding: 10px 20px;
+                padding-top: max(10px, env(safe-area-inset-top));
+                padding-left: max(20px, env(safe-area-inset-left));
+                background: #003472;
+                color: #fff;
             }
-            .nav-menu li {
-                margin-bottom: 0;
+            .mobile-brand {
+                font-size: 22px;
+                font-weight: 600;
+                line-height: 1.4;
+                white-space: nowrap;
             }
-            .nav-menu li::before {
-                display: none;
+            .menu-toggle, .menu-close { display: inline-flex; flex-shrink: 0; }
+            .menu-close { position: absolute; top: 22px; right: 16px; }
+            .sidebar {
+                z-index: 1100;
+                width: min(300px, 84vw);
+                padding: 30px 32px;
+                padding-top: max(30px, env(safe-area-inset-top));
+                padding-bottom: max(28px, env(safe-area-inset-bottom));
+                transform: translateX(-100%);
+                visibility: hidden;
+                transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s 300ms;
+                overscroll-behavior: contain;
+                -webkit-overflow-scrolling: touch;
             }
-            .footer {
-                display: none;
+            .sidebar-brand { font-size: 24px; padding-right: 36px; }
+            .nav-menu { margin-top: 28px; }
+            .nav-menu li { margin-bottom: 8px; }
+            .nav-menu a { display: block; padding: 8px 0; font-size: 18px; }
+            .footer { margin-top: 36px; flex-shrink: 0; }
+            .menu-backdrop {
+                display: block;
+                position: fixed;
+                inset: 0;
+                z-index: 1050;
+                background: rgba(0, 0, 0, 0.46);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: opacity 300ms ease, visibility 0s 300ms;
             }
-            .main-content {
-                margin-left: 0;
-                padding: 40px 6%;
+            body.menu-open .sidebar {
+                transform: translateX(0);
+                visibility: visible;
+                box-shadow: 8px 0 30px rgba(0, 0, 0, 0.15);
+                transition-delay: 0s;
             }
+            body.menu-open .menu-backdrop {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transition-delay: 0s;
+            }
+            body.menu-open { position: fixed; width: 100%; overflow: hidden; }
+            .main-content { margin-left: 0; padding: 40px 6%; }
+            .profile-header { flex-direction: column; text-align: center; gap: 20px; }
+            .pdf-preview { height: 70vh; min-height: 520px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .sidebar, .menu-backdrop { transition: none; }
         }
     </style>
+    <noscript><style>
+        @media (max-width: 850px) {
+            .menu-toggle, .menu-close { display: none; }
+            .sidebar { position: relative; width: 100%; height: auto; transform: none; visibility: visible; }
+            .sidebar-brand, .sidebar .footer { display: none; }
+            .nav-menu { margin-top: 0; }
+        }
+    </style></noscript>
 </head>
 
 <body>
 
+<header class="mobile-header">
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-sidebar" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h18M3 12h18M3 19h18"/></svg>
+    </button>
+    <a class="mobile-brand" href="index.html">Runfa Hu</a>
+</header>
+<div class="menu-backdrop" aria-hidden="true"></div>
+
 <div class="container">
-    <aside class="sidebar">
+    <aside class="sidebar" id="site-sidebar" aria-label="Site menu">
+        <a class="sidebar-brand" href="index.html">Runfa Hu</a>
+        <button class="menu-close" type="button" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+        <nav class="site-navigation" aria-label="Primary navigation">
         <ul class="nav-menu">
             <li><a href="index.html">About</a></li>
             <li class="active"><a href="publications.html" aria-current="page">Publications</a></li>
@@ -224,6 +322,7 @@
             <li><a href="personal.html">Personal</a></li>
             <li><a href="cv.html">Curriculum Vitae</a></li>
         </ul>
+        </nav>
 
         <div class="footer">
             <p>&copy; 2026 Runfa Hu.</p>
@@ -259,6 +358,83 @@
         </section>
     </main>
 </div>
+
+<script>
+    (() => {
+        const sidebar = document.getElementById('site-sidebar');
+        const toggle = document.querySelector('.menu-toggle');
+        const closeButton = document.querySelector('.menu-close');
+        const backdrop = document.querySelector('.menu-backdrop');
+        const header = document.querySelector('.mobile-header');
+        const main = document.querySelector('.main-content');
+        const mobile = window.matchMedia('(max-width: 850px)');
+        let isOpen = false;
+        let scrollPosition = 0;
+
+        function setMenu(open, restoreFocus = true) {
+            open = open && mobile.matches;
+            const wasOpen = isOpen;
+            if (open && !wasOpen) {
+                scrollPosition = window.scrollY;
+                document.body.style.top = '-' + scrollPosition + 'px';
+            }
+            isOpen = open;
+            document.body.classList.toggle('menu-open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            main.inert = open;
+            header.inert = open;
+            sidebar.inert = mobile.matches && !open;
+            if (open) {
+                sidebar.removeAttribute('aria-hidden');
+                sidebar.setAttribute('role', 'dialog');
+                sidebar.setAttribute('aria-modal', 'true');
+                closeButton.focus({preventScroll: true});
+            } else {
+                sidebar.removeAttribute('role');
+                sidebar.removeAttribute('aria-modal');
+                if (wasOpen) {
+                    document.body.style.top = '';
+                    window.scrollTo({top: scrollPosition, left: 0, behavior: 'instant'});
+                    if (restoreFocus) {
+                        const target = mobile.matches ? toggle : sidebar.querySelector('.nav-menu .active a');
+                        target?.focus({preventScroll: true});
+                    }
+                }
+                if (mobile.matches) sidebar.setAttribute('aria-hidden', 'true');
+                else sidebar.removeAttribute('aria-hidden');
+            }
+        }
+
+        toggle.addEventListener('click', () => setMenu(!isOpen));
+        closeButton.addEventListener('click', () => setMenu(false));
+        backdrop.addEventListener('click', () => setMenu(false));
+        sidebar.addEventListener('click', (event) => {
+            if (event.target.closest('a') && isOpen) setMenu(false);
+        });
+        document.addEventListener('keydown', (event) => {
+            if (!isOpen) return;
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                setMenu(false);
+            } else if (event.key === 'Tab') {
+                const focusable = Array.from(sidebar.querySelectorAll('a[href], button:not([disabled])'));
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+        mobile.addEventListener('change', () => setMenu(false));
+        window.addEventListener('pageshow', () => setMenu(false));
+        setMenu(false, false);
+    })();
+</script>
 
 </body>
 </html>
